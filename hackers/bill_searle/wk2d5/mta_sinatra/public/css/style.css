@@ -1,0 +1,36 @@
+html{
+  height: 100%;
+}
+body{
+  font-family: helvetica;
+  max-width: 960px;
+  text-align: center;
+  margin: auto;
+  background-color: #EBF5FF;
+}
+h1{
+  font-weight: 400;
+  padding: 40px;
+}
+h2{
+  font-weight: 300;
+  padding: 40px;
+}
+h3{
+  font-weight: 100;
+}
+label{
+  font-size: 16px;
+  font-weight:
+}
+select{
+   background:;
+   width: 4em;
+   padding: 5px;
+   font-size: 16px;
+   line-height: 1;
+   border-radius: 0;
+   height: 34px;
+   margin: 20px;
+   font-weight: 100;
+  }

@@ -5,11 +5,11 @@ body{
   margin: auto;
   font-family: 'Raleway', sans-serif;
   padding: 0.8em;
-  background-color: #FFF8E4
+  background-color: #FFF8E4;
+  text-align:justify;
 }
 td a{
   text-align: center;
-
   color: #8E95B2;
   text-decoration: none;
   display: inline-block;

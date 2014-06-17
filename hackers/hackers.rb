@@ -6,6 +6,6 @@ hackers.each do |hacker|
 	folder_name = hacker.gsub(' ','_').downcase
   FileUtils.mkdir folder_name
   FileUtils.chdir folder_name do
-    FileUtils.touch '.gitkeep'
+  FileUtils.touch '.gitkeep'
   end
 end
