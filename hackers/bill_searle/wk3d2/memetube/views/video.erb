@@ -1,0 +1,14 @@
+<div class='video'>
+  <h3> <%= @video.title %> </h3>
+
+  <iframe width="560" height="315" src="//www.youtube.com/embed/<%= @embed_url[1] %>" frameborder="0" allowfullscreen></iframe>
+
+  <h4> <%= @video.genre %> </h4>
+
+  <p> <%= @video.description %> </p>
+</div>
+
+<ul>
+  <li><a href="/memetube/<%= @video.id %>/edit">Edit</a></li>
+  <li><a href="/memetube/<%= @video.id %>/delete">Delete</a></li>
+</ul>

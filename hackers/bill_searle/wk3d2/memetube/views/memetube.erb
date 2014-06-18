@@ -1,0 +1,16 @@
+<div class = "videos">
+
+    <% @videos.each do |video| %>
+        <a href="/memetube/<%= video['id'] %>"> <%= video['title'] %>
+        </a>
+
+      <% url = video.url %>
+      <% embed_url = url.split('=') %>
+
+        <iframe width="560" height="315" src="//www.youtube.com/embed/<%= embed_url[1] %>" frameborder="0" allowfullscreen></iframe>
+    <% end %>
+
+
+</div>
+
+
