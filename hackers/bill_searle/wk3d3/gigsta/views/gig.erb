@@ -1,0 +1,16 @@
+<div id="edit_nav">
+<a href="/gigsta/<%= @gig.id %>/edit">Edit</a>
+<a href="/gigsta/<%= @gig.id %>/delete">Delete</a>
+</div>
+
+<h2> <%= @gig.venue %> </h2>
+<p> <%= @gig.gigdate %> </p>
+<p> <%= @gig.time %> </p>
+<p> <%= @gig.address %> </p>
+
+<iframe
+  width="600"
+  height="450"
+  frameborder="0" style="border:0"
+  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAlS37BuOm8D2x75YyL_M-0fqQNVazBJXk&q=<%= @gig.address %>">
+</iframe>

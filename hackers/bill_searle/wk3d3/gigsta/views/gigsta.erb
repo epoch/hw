@@ -1,0 +1,20 @@
+<% @gigs.each do |gig| %>
+<div class="each_gig">
+
+<h2> <a href="/gigsta/<%= gig.id %>"> <%= gig.venue %> </a> </h2>
+<p>Date: <%= gig.gigdate %> </p>
+<p>Time: <%= gig.time %> </p>
+<p>Address: <%= gig.address %> </p>
+
+<iframe
+  width="600"
+  height="450"
+  frameborder="0" style="border:0"
+  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAlS37BuOm8D2x75YyL_M-0fqQNVazBJXk&q=<%= gig.address %>">
+</iframe>
+
+</div>
+<img id="shadow" src="img/separator.png" alt="shadow">
+<% end %>
+
+
