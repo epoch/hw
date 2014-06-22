@@ -1,5 +1,5 @@
 require 'pry'
-require 'pry-debugger'
+# require 'pry-debugger'
 require 'sinatra'
 require 'sinatra/reloader'
 
@@ -24,32 +24,42 @@ params.inspect
   @intersect1 = $lines[@start_line].index 'us'
   @intersect2 = $lines[@end_line].index 'us'
 
-  case
-  when
-    @start_line == @end_line && @start_station < @end_station
-    @trip = $lines[@start_line][@start_station..@end_station] # find the range between the index's on the specified line
-    @trip_length = @trip.length
-    @trip_stations = @trip.join(', ')
- when
-    @start_line == @end_line
-    @trip = $lines[@start_line][@end_station..@start_station] # find the range between the index's on the specified line
-    @trip_length = @trip.length
-    @trip_stations = @trip.reverse.join(', ')
-   when
-    @start_line != @end_line && @start_station < @intersect1
-    @trip1 = $lines[@start_line][@start_station..@intersect1]
-    @trip2 = $lines[@end_line][@intersect2..@end_station]
-    # @trip2.shift
-    @trip_length = @trip1.length + @trip2.length
-    @trip_stations = @trip1.join(', ') + @trip2.join(', ')
-  when
-    @start_line != @end_line
-    @trip1 = $lines[@start_line][@intersect1..@start_station]
-    @trip2 = $lines[@end_line][@end_station..@intersect2]
-    # @trip2.shift
-    @trip_length = @trip1.length + @trip2.length
-    @trip_stations = @trip1.join(', ') + @trip2.join(', ')
+     # You are on a single line going from lower index to higher index
+  if @start_line == @end_line
+    if @start_station < @end_station
+       @trip1 = $lines[@start_line][@start_station..@end_station] # find the range between the index's on the specified line
+    else
+       @trip1 = $lines[@start_line][@end_station..@start_station] # find the range between the index's on the specified line
+    end
+       @trip_length = @trip1.length
+       @trip_stations = @trip1.reverse.join(', ')
+  else
+    if @start_station <= @intersect1
+       @trip1 = $lines[@start_line][@start_station..@intersect1]
+    end
+    if @end_station <= @intersect2
+       @trip2 = $lines[@end_line][@end_station..@intersect2]
+       @trip2.reverse!
+       @trip2.shift
+    end
+    if @start_station >= @intersect1
+       @trip1 = $lines[@start_line][@intersect1..@start_station]
+       @trip1.reverse!
+    end
+    if @end_station >= @intersect2
+       @trip2 = $lines[@end_line][@intersect2..@end_station]
+       @trip2.shift
+    end
   end
   # binding.pry
+
+    if @trip2 == nil
+      @trip_stations = @trip1.join(', ')
+      @trip_length = @trip1.length
+    else
+      @trip_stations = @trip1.join(', ') + ', ' + @trip2.join(', ')
+      @trip_length = @trip1.length + @trip2.length
+    end
+
   erb :results
 end

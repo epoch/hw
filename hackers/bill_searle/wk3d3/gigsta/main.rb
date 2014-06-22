@@ -1,5 +1,5 @@
 require 'pry'
-require 'pry-debugger'
+# require 'pry-debugger'
 require 'sinatra'
 require 'sinatra/reloader'
 require 'sqlite3'

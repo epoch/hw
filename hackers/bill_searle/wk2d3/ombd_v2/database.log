@@ -1,0 +1,10 @@
+D, [2014-06-19T11:42:48.912045 #17108] DEBUG -- :   [1m[36mMovie Load (0.1ms)[0m  [1mSELECT  "movies".* FROM "movies"  WHERE "movies"."imdbid" = 'tt2063666' LIMIT 1[0m
+D, [2014-06-19T11:42:48.917866 #17108] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2014-06-19T11:42:48.922273 #17108] DEBUG -- :   [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "movies" ("imdbid", "poster", "title", "year") VALUES (?, ?, ?, ?)[0m  [["imdbid", "tt2063666"], ["poster", "http://ia.media-imdb.com/images/M/MV5BMzkzMDc0Nzg5OF5BMl5BanBnXkFtZTcwMDU0MzAyOA@@._V1_SX300.jpg"], ["title", "Hello I Must Be Going"], ["year", 2012]]
+D, [2014-06-19T11:42:48.924680 #17108] DEBUG -- :   [1m[35m (2.1ms)[0m  commit transaction
+D, [2014-06-19T11:42:56.685210 #17108] DEBUG -- :   [1m[36mMovie Load (0.2ms)[0m  [1mSELECT  "movies".* FROM "movies"  WHERE "movies"."imdbid" = 'tt2063666' LIMIT 1[0m
+D, [2014-06-19T11:43:33.262715 #17108] DEBUG -- :   [1m[35mMovie Load (0.2ms)[0m  SELECT  "movies".* FROM "movies"  WHERE "movies"."imdbid" = 'tt0084719' LIMIT 1
+D, [2014-06-19T11:43:33.263269 #17108] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2014-06-19T11:43:33.264188 #17108] DEBUG -- :   [1m[35mSQL (0.3ms)[0m  INSERT INTO "movies" ("imdbid", "poster", "title", "year") VALUES (?, ?, ?, ?)  [["imdbid", "tt0084719"], ["poster", "http://ia.media-imdb.com/images/M/MV5BMjE2MTQ5NDEyMF5BMl5BanBnXkFtZTcwMTEwMjkxMQ@@._V1_SX300.jpg"], ["title", "The New York Ripper"], ["year", 1982]]
+D, [2014-06-19T11:43:33.266584 #17108] DEBUG -- :   [1m[36m (2.2ms)[0m  [1mcommit transaction[0m
+D, [2014-06-19T11:43:40.746876 #17108] DEBUG -- :   [1m[35mMovie Load (0.2ms)[0m  SELECT  "movies".* FROM "movies"  WHERE "movies"."imdbid" = 'tt0084719' LIMIT 1

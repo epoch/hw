@@ -1,0 +1,7 @@
+<% if @movie_name.include? "+" %>
+  <h1>Terribily sorry ol' bean but we can't find <%= @movie_name.gsub!('+',' ') %>!</h1>
+  <% else %>
+   <h1>Terribily sorry ol' bean but we can't find <%= @movie_name%>!</h1>
+<% end %>
+
+    <a href="/movies">new search</footer>
