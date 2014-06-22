@@ -1,10 +1,9 @@
-<span><h1>MTA TRIP STOP COUNTER</h1></span>
-<h3>Select your start and end stops</h3>
 
-<form action="/results" method="get">
 
-  <label for="start_option">Start</label>
-  <select name="start_option">
+<form action="/results" method="get" class="form-inline">
+
+  <label for="start_option">Start:</label>
+  <select name="start_option" class="form-control input-lg">
     <% $lines.each do |line, stations| line %>
       <optgroup label="<%= line %> line">
         <% stations.each do |station| %>
@@ -16,8 +15,8 @@
     <% end %>
   </select>
 
-<label for="end_option">End</label>
-  <select name="end_option">
+<label for="end_option">End:</label>
+  <select name="end_option" class="form-control input-lg">
     <% $lines.each do |line, stations| %>
       <optgroup label="<%= line %> line">
         <% stations.each do |station| %>
@@ -28,5 +27,5 @@
       </optgroup>
     <% end %>
   </select>
-    <button>Go!</button>
+    <button class="btn btn-default btn-lg">Go!</button>
 </form>

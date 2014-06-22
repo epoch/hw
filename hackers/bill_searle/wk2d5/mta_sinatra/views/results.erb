@@ -1,10 +1,9 @@
-<span><h1>MTA TRIP STOP COUNTER</h1></span>
-<h3>Select your start and end stops</h3>
+<div class="col-lg-6 col-lg-offset-3">
 
-<form action="/results" method="get">
+<form action="/results" method="get" class="form-inline">
 
-  <label for="start_option">Start</label>
-  <select name="start_option">
+  <label for="start_option">Start:</label>
+  <select name="start_option" class="form-control input-lg">
     <% $lines.each do |line, stations| line %>
       <optgroup label="<%= line %> line">
         <% stations.each do |station| %>
@@ -16,8 +15,8 @@
     <% end %>
   </select>
 
-<label for="end_option">End</label>
-  <select name="end_option">
+<label for="end_option">End:</label>
+  <select name="end_option" class="form-control input-lg">
     <% $lines.each do |line, stations| %>
       <optgroup label="<%= line %> line">
         <% stations.each do |station| %>
@@ -28,15 +27,19 @@
       </optgroup>
     <% end %>
   </select>
-    <button>Go!</button>
+    <button class="btn btn-default btn-lg">Go!</button>
 </form>
 
+  <div class="page-header">
+    <h3>RESULTS</h3>
+  </div>
+  <!-- <p>You are getting on at line <%= @start_line.upcase %> stop <%= @start_station %> and getting off at line <%= @end_line.upcase %> stop <%= @end_station %>.</p> -->
 
-<h2>RESULTS</h2>
-<!-- <p>You are getting on at line <%= @start_line.upcase %> stop <%= @start_station %> and getting off at line <%= @end_line.upcase %> stop <%= @end_station %>.</p> -->
+    <h4>The total number of stops is: <%= @trip_length %></h4>
+    <h4>You will pass though <%= @trip_stations.upcase %>.</h4>
 
-  <h3>The total number of stops is: <%= @trip_length %></h3>
-  <h3>You will pass though <%= @trip_stations.upcase %>.</h3>
+
+</div>
 <!--
 trip: <%= @trip %><br>
 trip1: <%= @trip1 %><br>
