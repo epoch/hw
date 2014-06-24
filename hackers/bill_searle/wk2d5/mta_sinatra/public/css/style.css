@@ -6,3 +6,27 @@ html{
   /*background: -webkit-gradient(radial, center center, 100, center center, 900, from(#E1FDFF), to(#A9BEBF));*/
   background-color: #F9F9F9
 }
+#journey{
+	padding-top: 3em;
+}
+.station{
+	text-align: center;
+	display: inline-block;
+	border-top-left-radius:     50%;
+	border-top-right-radius:    50%;
+	border-bottom-right-radius: 50%;
+	border-bottom-left-radius:  50%;
+	border: 4px solid #E8590C;
+	/*border-radius: 100%, 100%, 100%, 0;*/
+	height: 50px;
+	width: 50px; 
+	padding-top: 11px;
+}
+.station_join{
+	display: inline-block;
+	border-top: 4px solid #E8590C;
+	height: 7px;
+	width: 15px;
+	/*background-color: #E8590C;*/
+	padding-top: -5px;
+}

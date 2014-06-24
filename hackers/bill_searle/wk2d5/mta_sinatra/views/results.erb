@@ -35,13 +35,21 @@
   </div>
   <!-- <p>You are getting on at line <%= @start_line.upcase %> stop <%= @start_station %> and getting off at line <%= @end_line.upcase %> stop <%= @end_station %>.</p> -->
 
-    <h4>The total number of stops is: <%= @trip_length %></h4>
-    <h4>You will pass though <%= @trip_stations.upcase %>.</h4>
+    <h4><%= @trip_length %></h4>
+    <h4><%= @trip_stations.upcase %>.</h4>
 
+  <div id="journey">
+    <% @trip_stations.upcase.split(', ').drop(1).each do |station| %>
+        <div class="station_join"></div>
+      <div class="station">
+        <%= station %>
+      </div>
+    <% end %>
+  </div>
+<!-- 
+<%= @start_line %>
+<%= @end_line %>
 
-</div>
-<!--
-trip: <%= @trip %><br>
 trip1: <%= @trip1 %><br>
 trip2: <%= @trip2 %><br>
 trip_length <%= @trip_length %><br>

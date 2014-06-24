@@ -53,13 +53,22 @@ params.inspect
   end
   # binding.pry
 
-    if @trip2 == nil
-      @trip_stations = @trip1.join(', ')
-      @trip_length = @trip1.length
+  # if @start_station == 'us' && @end_station == 'us'
+  #    @trip_length = nil
+  #    @trip_stations = "You are already there"
+  # elsif
+  if
+      @start_station == @end_station && @start_line == @end_line || (@trip1 == "us" && @trip2 == [])
+      @trip_length = nil
+      @trip_stations = "You are already there"
+  elsif
+      @trip2 == nil
+      @trip_stations = "You will pass though, #{@trip1.join(', ')}"
+      @trip_length = "The total number of stops is: #{@trip1.length}"
     else
-      @trip_stations = @trip1.join(', ') + ', ' + @trip2.join(', ')
-      @trip_length = @trip1.length + @trip2.length
+      @trip_stations = "You will pass through, #{@trip1.join(', ') + ', ' + @trip2.join(', ')} "
+      @trip_length = "The total number of stops is: #{@trip1.length + @trip2.length}"
     end
-
+# binding.pry
   erb :results
 end
