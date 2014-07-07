@@ -1,0 +1,23 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  # For details on connection pooling, see rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: 5
+
+development:
+  <<: *default
+  database: books_app_development
+  host: localhost
+  username: Bill
+  password:
+
+test:
+  <<: *default
+  database: books_app_test
+
+production:
+  <<: *default
+  database: books_app_production
+  username: books_app
+  password: <%= ENV['BOOKS_APP_DATABASE_PASSWORD'] %>

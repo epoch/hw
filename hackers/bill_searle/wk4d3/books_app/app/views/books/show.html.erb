@@ -1,0 +1,12 @@
+	<div class="second_nav">
+	<li><%= link_to("Edit Book", edit_book_path(@book.id)) %></li>
+	<li><%= link_to("Delete Book", @book, :data => {:confirm => "Are you sure you want to delete #{@book.title} from the database?"}, :method => :delete) %></li>
+	</div>
+
+<h2><%= @book.title %></h2>
+<h4><%= @book.author.name  if @book.author %> </h4>
+	<p><%= image_tag(@book.image, :class => "medium") %></p>
+	<p><%= @book.description %></p>
+	<p>Pages: <%= @book.pages %></p>
+	<p>ISBN: <%= @book.isbn %></p>
+

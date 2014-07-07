@@ -1,0 +1,24 @@
+	<div class="second_nav">
+		<li><%= link_to("Edit Author", edit_author_path(@author.id)) %></li>
+		<li><%= link_to("Delete Author", @author, :data => {:confirm => "Are you sure you want to delete #{@author.name} from the database?"}, :method => :delete) %>
+		</li>
+	</div>
+	
+		<h2><%= @author.name %></h2>
+		<p><%= @author.nationality %></p>
+		<p>Date of birth: <%= @author.dob.strftime('%B %d %Y') if @author.dob %></p>
+		<p><%= image_tag(@author.image, :class => "medium")%></p>
+		<%= image_tag("/assets/separator.png") %>
+
+		
+		<%	@author.books.each do |book| %>
+		<ul>
+			<li><%= link_to(book.title, book) %></li>
+			<li><%=	image_tag(book.image, :class => "thumb") %></li>
+		</ul>
+		<%= image_tag("/assets/separator.png") %>
+		<% end %>
+	
+
+
+	

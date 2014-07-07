@@ -58,7 +58,8 @@ params.inspect
   #    @trip_stations = "You are already there"
   # elsif
   if
-      @start_station == @end_station && @start_line == @end_line || (@trip1 == "us" && @trip2 == [])
+      (@start_station == @end_station && @start_line == @end_line) || 
+      (@trip1 == "us" && @trip2 == [])
       @trip_length = nil
       @trip_stations = "You are already there"
   elsif

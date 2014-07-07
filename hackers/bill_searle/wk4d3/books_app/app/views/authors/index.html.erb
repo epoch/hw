@@ -1,0 +1,6 @@
+
+<% @authors.each do |author| %>
+	<h2><%= link_to(author.name, author_path(author.id)) %></h2>
+	<%= image_tag(author.image) %>
+	<%= image_tag("/assets/separator.png") %>
+<% end %>
