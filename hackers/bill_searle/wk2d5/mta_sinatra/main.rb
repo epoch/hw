@@ -31,8 +31,10 @@ params.inspect
     else
        @trip1 = $lines[@start_line][@end_station..@start_station] # find the range between the index's on the specified line
     end
+
        @trip_length = @trip1.length
        @trip_stations = @trip1.reverse.join(', ')
+       
   else
     if @start_station <= @intersect1
        @trip1 = $lines[@start_line][@start_station..@intersect1]
