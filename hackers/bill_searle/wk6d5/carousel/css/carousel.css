@@ -11,6 +11,7 @@ body {
 }
 
 #carousel {
+  left: 0;
   position: absolute;
   display: inline-block;
   width: 1836px;
